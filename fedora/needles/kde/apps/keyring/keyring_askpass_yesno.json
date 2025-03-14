@@ -1,0 +1,17 @@
+{
+  "area": [
+    {
+      "type": "match",
+      "xpos": 453,
+      "height": 19,
+      "ypos": 347,
+      "width": 138,
+      "match": 90
+    }
+  ],
+  "properties": [],
+  "tags": [
+    "keyring_askpass_yesno",
+    "DESKTOP-kde"
+  ]
+}

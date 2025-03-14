@@ -1,0 +1,15 @@
+{
+  "area": [
+    {
+      "xpos": 480,
+      "ypos": 258,
+      "width": 59,
+      "height": 44,
+      "type": "match"
+    }
+  ],
+  "properties": [],
+  "tags": [
+    "disks_partition_created_root"
+  ]
+}
