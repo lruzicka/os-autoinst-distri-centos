@@ -92,7 +92,7 @@
                 "QEMU_DISABLE_SNAPSHOTS": "1",
                 "REPOSITORY_VARIATION": "%LOCATION%",
                 "ROOT_PASSWORD": "weakpassword",
-                "USER_LOGIN": "qwerty"
+                "USER_LOGIN": "test"
             }
         },
         "install_default_upload": {
