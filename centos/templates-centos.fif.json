@@ -1,0 +1,110 @@
+{
+    "Machines": {
+        "bios": {
+            "backend": "qemu",
+            "settings": {
+                "ARCH_BASE_MACHINE": "64bit",
+                "PART_TABLE_TYPE": "mbr",
+                "QEMUCPU": "host",
+                "QEMUCPUS": "2",
+                "QEMURAM": "3072",
+                "QEMU_VIDEO_DEVICE": "virtio-vga",
+                "QEMU_MAX_MIGRATION_TIME": "480",
+                "QEMU_VIRTIO_RNG": "1",
+                "XRES": "1024",
+                "YRES": "768",
+                "WORKER_CLASS": "qemu_x86_64"
+            }
+        },
+        "64bit": {
+            "backend": "qemu",
+            "settings": {
+                "ARCH_BASE_MACHINE": "64bit",
+                "INSECURE_PFLASH_CODE": "/usr/share/edk2/ovmf/OVMF_CODE_4M.qcow2",
+                "INSECURE_PFLASH_VARS": "/usr/share/edk2/ovmf/OVMF_VARS_4M.qcow2",
+                "PART_TABLE_TYPE": "gpt",
+                "QEMUCPU": "host",
+                "QEMUCPUS": "2",
+                "QEMURAM": "3072",
+                "QEMU_VIDEO_DEVICE": "virtio-vga",
+                "XRES": "1024",
+                "YRES": "768",
+                "QEMUMACHINE": "q35,smm=on",
+                "QEMU_APPEND": "global driver=cfi.pflash01,property=secure,value=on",
+                "QEMU_MAX_MIGRATION_TIME": "480",
+                "QEMU_VIRTIO_RNG": "1",
+                "UEFI": "1",
+                "UEFI_PFLASH_CODE": "/usr/share/edk2/ovmf/OVMF_CODE_4M.secboot.qcow2",
+                "UEFI_PFLASH_VARS": "/usr/share/edk2/ovmf/OVMF_VARS_4M.secboot.qcow2",
+                "UEFI_SECURE": "1",
+                "WORKER_CLASS": "qemu_x86_64"
+            }
+        }
+    },
+    "Products": {
+        "centos-Server-dvd-iso-x86_64-*": {
+            "arch": "x86_64",
+            "distri": "centos",
+            "flavor": "Server-dvd-iso",
+            "settings": {
+                "DEPLOY_UPLOAD_TEST": "install_default_upload",
+                "TEST_TARGET": "ISO"
+            },
+            "version": "*"
+        },
+        "fedora-Workstation-live-iso-x86_64-*": {
+            "arch": "x86_64",
+            "distri": "fedora",
+            "flavor": "Workstation-live-iso",
+            "settings": {
+                "DESKTOP": "gnome",
+                "DEPLOY_UPLOAD_TEST": "install_default_upload",
+                "HDDSIZEGB": "20",
+                "INSTALL_RETRY": "5",
+                "LIVE": "1",
+                "PACKAGE_SET": "default",
+                "TEST_TARGET": "ISO"
+            },
+            "version": "*"
+        }
+    },
+    "Profiles": {
+        "centos-Server-dvd-iso-x86_64-*-64bit": {
+            "machine": "64bit",
+            "product": "centos-Server-dvd-iso-x86_64-*"
+        },
+        "centos-Server-dvd-iso-x86_64-*-bios": {
+            "machine": "bios",
+            "product": "centos-Server-dvd-iso-x86_64-*"
+        }
+    },
+    "TestSuites": {
+        "install_european_language": {
+            "profiles": {
+                "centos-Server-dvd-iso-x86_64-*-bios": 40
+            },
+            "settings": {
+                "DESKTOP": "gnome",
+                "HDDSIZEGB": "15",
+                "LANGUAGE": "czech",
+                "PACKAGE_SET": "workstation",
+                "POSTINSTALL": "_console_login",
+                "QEMU_DISABLE_SNAPSHOTS": "1",
+                "REPOSITORY_VARIATION": "%LOCATION%",
+                "ROOT_PASSWORD": "weakpassword",
+                "USER_LOGIN": "qwerty"
+            }
+        },
+        "install_default_upload": {
+            "profiles": {
+                "centos-Server-dvd-iso-x86_64-*-bios": 10
+            },
+            "settings": {
+                "PACKAGE_SET": "server",
+                "POSTINSTALL": "_collect_data",
+                "RETRY": "%INSTALL_RETRY%",
+                "STORE_HDD_1": "disk_%FLAVOR%_%MACHINE%.qcow2"
+            }
+        }
+    }
+}
