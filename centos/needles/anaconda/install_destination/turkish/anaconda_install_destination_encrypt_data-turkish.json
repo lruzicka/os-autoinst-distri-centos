@@ -1,0 +1,16 @@
+{
+  "area": [
+    {
+      "xpos": 24,
+      "ypos": 552,
+      "width": 116,
+      "height": 17,
+      "type": "match"
+    }
+  ],
+  "properties": [],
+  "tags": [
+    "LANGUAGE-turkish",
+    "anaconda_install_destination_encrypt_data"
+  ]
+}

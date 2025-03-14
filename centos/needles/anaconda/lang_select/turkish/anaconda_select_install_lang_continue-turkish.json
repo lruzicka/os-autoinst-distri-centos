@@ -1,0 +1,16 @@
+{
+  "area": [
+    {
+      "xpos": 954,
+      "ypos": 730,
+      "width": 44,
+      "height": 18,
+      "type": "match"
+    }
+  ],
+  "properties": [],
+  "tags": [
+    "LANGUAGE-turkish",
+    "anaconda_select_install_lang_continue"
+  ]
+}
