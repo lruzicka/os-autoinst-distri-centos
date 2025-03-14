@@ -2527,7 +2527,7 @@
                 "POSTINSTALL": "realmd_join_cockpit domain_client",
                 "POST_STATIC": "172.16.2.132 adclient002.samdom.openqa.fedoraproject.org",
                 "REALMD_ADMIN_USER": "administrator",
-                "REALMD_ADMIN_PASSWORD": "129ho3eau47#qm9to9s^",
+                "REALMD_ADMIN_PASSWORD": "129ho3eau47#qm9to9s^", # notsecret
                 "REALMD_DNS_SERVER_HOST": "ad001.samdom.openqa.fedoraproject.org",
                 "REALMD_DNS_SERVER_IP": "172.16.2.130",
                 "REALMD_DOMAIN": "samdom.openqa.fedoraproject.org",
